@@ -1,7 +1,9 @@
-package com.openclassrooms.watchlist;
+package validation;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+
+import domain.WatchlistItem;
 
 public class GoodMovieValidator implements ConstraintValidator<GoodMovie, WatchlistItem> {
 

@@ -1,7 +1,10 @@
-package com.openclassrooms.watchlist;
+package domain;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+
+import validation.GoodMovie;
+import validation.Priority;
 
 @GoodMovie
 public class WatchlistItem {

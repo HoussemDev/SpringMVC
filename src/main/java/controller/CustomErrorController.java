@@ -1,4 +1,4 @@
-package com.openclassrooms.watchlist;
+package controller;
 
 import javax.servlet.http.HttpServletResponse;
 
