@@ -57,6 +57,11 @@ public class WatchlistCotroller {
 		}
 		WatchlistItem existingItem = findWatchListItemById(watchlistItem.getId());
 		if(existingItem == null) {
+			if(itemAleadyExists(watchlistItem.getTitle())) {
+				bindingResult.rejectValue("title","", "This title already exists on your watchlist");
+				return new ModelAndView("watchlistItemForm");
+
+			}
 			watchlistItem.setId(index++);
 			watchlistitems.add(watchlistItem);
 		}else {
@@ -85,5 +90,16 @@ public class WatchlistCotroller {
 		model.put("numberOfMovies", watchlistitems.size());
 		return new ModelAndView(viewName, model);
 
+	}
+	
+	private boolean itemAleadyExists(String title) {
+		for (WatchlistItem watchlistItem : watchlistitems) {
+			if(watchlistItem.getTitle().equals(title)) {
+				return true;
+			}
+		}
+		return false;
+
+	
 	}
 }
